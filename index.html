@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#1e1e2f">
+  <meta name="description" content="DonatikShop – магазин игр, акций и развлечений.">
   <title>DonatikShop</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,26 +15,24 @@
       --primary: #6366f1;
       --secondary: #8b5cf6;
       --dark: #1e1e2f;
-      --glass: rgba(255,255,255,0.05);
+      --glass: rgba(255, 255, 255, 0.05);
     }
-    
+    /* Сброс стилей */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background: var(--dark);
-      color: white;
+      color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       line-height: 1.5;
     }
-
     /* Шапка с эффектом стекла */
     header {
       width: 100%;
@@ -45,10 +45,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
     .shop-title {
       font-size: 1.6rem;
       font-weight: 700;
@@ -56,10 +55,9 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .header-right a {
       text-decoration: none;
-      color: white;
+      color: #fff;
       font-weight: 500;
       padding: 0.6rem 1.2rem;
       border-radius: 8px;
@@ -69,11 +67,9 @@
       align-items: center;
       gap: 0.5rem;
     }
-
     .header-right a:active {
       transform: scale(0.95);
     }
-
     /* Основной контент */
     main {
       flex: 1;
@@ -84,24 +80,20 @@
       display: grid;
       gap: 2.5rem;
     }
-
-    /* Верхняя секция */
+    /* Верхняя секция: промо и логотип */
     .top-section {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
-
     /* Блок акций */
     .promo-block {
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
       position: relative;
-      isolation: isolate;
+      overflow: hidden;
+      border-radius: 16px;
+      aspect-ratio: 16/9;
       transition: transform 0.3s;
     }
-
     .promo-block::before {
       content: '';
       position: absolute;
@@ -109,22 +101,18 @@
       background: linear-gradient(45deg, rgba(99,102,241,0.4), rgba(139,92,246,0.4));
       z-index: 1;
     }
-
     .promo-block:hover {
       transform: translateY(-5px);
     }
-
     .promo-image {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s;
     }
-
     .promo-block:hover .promo-image {
       transform: scale(1.05);
     }
-
     .promo-text {
       position: absolute;
       bottom: 1.5rem;
@@ -132,49 +120,43 @@
       font-size: 2rem;
       font-weight: 700;
       z-index: 2;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     }
-
     /* Логотип магазина */
     .logo-block {
       background: var(--glass);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       padding: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.1);
     }
-
     .logo-block img {
       width: 100%;
       max-width: 200px;
       border-radius: 50%;
       aspect-ratio: 1/1;
       object-fit: cover;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
-
-    /* Каталоги (игры) – единый дизайн, как у промо-блока */
+    /* Каталог игр */
     .games-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 1.5rem;
     }
-
     .game-card {
-      aspect-ratio: 16/9;
-      border-radius: 16px;
-      overflow: hidden;
       position: relative;
-      isolation: isolate;
+      overflow: hidden;
+      border-radius: 16px;
+      aspect-ratio: 16/9;
       transition: transform 0.3s;
       text-decoration: none;
-      color: white;
+      color: #fff;
       display: block;
     }
-
     .game-card img {
       width: 100%;
       height: 100%;
@@ -182,11 +164,9 @@
       transition: transform 0.3s;
       display: block;
     }
-
     .game-card:hover img {
       transform: scale(1.05);
     }
-
     .game-card::before {
       content: '';
       position: absolute;
@@ -194,7 +174,6 @@
       background: linear-gradient(45deg, rgba(99,102,241,0.4), rgba(139,92,246,0.4));
       z-index: 1;
     }
-
     .game-text {
       position: absolute;
       bottom: 1.5rem;
@@ -202,33 +181,50 @@
       font-size: 2rem;
       font-weight: 700;
       z-index: 2;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
       margin: 0;
     }
-
-    /* Адаптив */
+    /* Адаптив для планшетов и телефонов */
     @media (max-width: 640px) {
       header {
-        padding: 1rem;
+        padding: 0.8rem 1rem;
       }
-      
       .shop-title {
         font-size: 1.4rem;
       }
-      
       .header-right a {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
       }
-
       main {
         padding: 1.5rem 1rem;
         gap: 2rem;
       }
-
       .promo-text,
       .game-text {
         font-size: 1.75rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .shop-title {
+        font-size: 1.2rem;
+      }
+      .header-right a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+      }
+      .promo-text,
+      .game-text {
+        font-size: 1.5rem;
+        bottom: 1rem;
+        left: 1rem;
+      }
+      .logo-block {
+        padding: 1.5rem;
+      }
+      main {
+        padding: 1rem;
+        gap: 1.5rem;
       }
     }
   </style>
@@ -237,7 +233,7 @@
   <header>
     <div class="shop-title">DonatikShop</div>
     <div class="header-right">
-      <a href="https://t.me/donotzv" target="_blank" rel="noopener">
+      <a href="https://t.me/donotzv" target="_blank" rel="noopener" aria-label="Отзывы">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         </svg>
@@ -245,52 +241,23 @@
       </a>
     </div>
   </header>
-
   <main>
     <div class="top-section">
-      <a href="https://t.me/DonatikShop91_bot?start=sale" class="promo-block" target="_blank" rel="noopener">
-        <img 
-          src="img/sale.jpg" 
-          class="promo-image" 
-          alt="Акции"
-          loading="lazy"
-        >
+      <a href="https://t.me/DonatikShop91_bot?start=sale" class="promo-block" target="_blank" rel="noopener" title="Акции">
+        <img src="img/sale.jpg" class="promo-image" alt="Акции" loading="lazy">
         <div class="promo-text">🔥 Акции</div>
       </a>
-      
       <div class="logo-block">
-        <img 
-          src="img/avatar.jpg" 
-          alt="Логотип DonatikShop"
-          loading="lazy"
-        >
+        <img src="img/avatar.jpg" alt="Логотип DonatikShop" loading="lazy">
       </div>
     </div>
-
     <div class="games-section">
-      <!-- Раздел Brawl Stars с оригинальным изображением -->
       <a href="#" class="game-card" title="Brawl Stars">
-        <img 
-          src="https://store.supercell.com/images/og-brawlstars.png" 
-          alt="Brawl Stars"
-          loading="lazy"
-        >
+        <img src="img/brawlstars.jpg" alt="Brawl Stars" loading="lazy">
         <div class="game-text">Brawl Stars</div>
       </a>
-      
-      <!-- Для остальных игр подставлено указанное изображение -->
-      <a 
-        href="https://t.me/Dongems39" 
-        class="game-card" 
-        target="_blank" 
-        rel="noopener"
-        title="Другие игры"
-      >
-        <img 
-          src="https://media.licdn.com/dms/image/sync/v2/D5627AQFw2UIlSXN2FQ/articleshare-shrink_800/articleshare-shrink_800/0/1731939977603?e=2147483647&v=beta&t=4ArLE0oItkEXnVsauu3T_-bfnXfU2bPQXM-zUQeh37o" 
-          alt="Другие игры"
-          loading="lazy"
-        >
+      <a href="https://t.me/Dongems39" class="game-card" target="_blank" rel="noopener" title="Другие игры">
+        <img src="img/games.jpg" alt="Другие игры" loading="lazy">
         <div class="game-text">Другие игры</div>
       </a>
     </div>
